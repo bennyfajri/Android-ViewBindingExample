@@ -10,21 +10,8 @@ android{
 }
 ```
 <br>
-2. Pada activity, penggunaannya sebagai berikut:
 
-```kotlin
-...
-lateinit var binding: FragmentMainBinding
-override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-    super.onViewCreated(view, savedInstanceState)
-    binding = FragmentMainBinding.bind(view)
-    binding.tvHelloWorld.text = "Yellow World!"
-
-}
-...
-```
-<br>
-3. lalu penggunaannya pada sebuah fragment adalah sebagai berikut:
+2.  Pada Activity, penggunaannya sebagai berikut:
 
 ```kotlin
 ...
@@ -34,6 +21,20 @@ override fun onCreate(savedInstanceState: Bundle?) {
    binding = ActivityMainBinding.inflate(layoutInflater)
    setContentView(binding.root)
    binding.tvHelloWorld.text = "Yellow world"
+}
+...
+```
+<br>
+3. lalu penggunaannya pada sebuah fragment adalah sebagai berikut:
+
+```kotlin
+...
+lateinit var binding: FragmentMainBinding
+override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    super.onViewCreated(view, savedInstanceState)
+    binding = FragmentMainBinding.bind(view)
+    binding.tvHelloWorld.text = "Yellow World!"
+
 }
 ...
 ```
